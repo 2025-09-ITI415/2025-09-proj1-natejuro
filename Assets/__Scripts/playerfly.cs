@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerfly : MonoBehaviour {
 
-    private float moveSpeed = 5f;
+    private float moveSpeed = 6f;
     private Rigidbody2D rb;
 
     private void Start() {
@@ -12,10 +12,8 @@ public class playerfly : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            rb.linearVelocity = Vector2.zero;
-            rb.AddForce(Vector2.up * moveSpeed, ForceMode2D.Impulse);
-            // rb.linearVelocity = Vector2.up * moveSpeed;
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            rb.linearVelocity = Vector2.up * moveSpeed;
         }
     }
 }
