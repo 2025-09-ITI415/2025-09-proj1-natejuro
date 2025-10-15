@@ -16,4 +16,8 @@ public class playerfly : MonoBehaviour {
             rb.linearVelocity = Vector2.up * moveSpeed;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        manager.instance.GameOver();
+    }
 }
